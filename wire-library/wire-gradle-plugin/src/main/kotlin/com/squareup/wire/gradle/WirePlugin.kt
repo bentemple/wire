@@ -159,12 +159,12 @@ class WirePlugin : Plugin<Project> {
           ?.srcDir(generatedSourcesDirectory.toRelativeString(project.projectDir))
     }
     sources.forEach { source ->
-      if (common == null) {
-        for (generatedSourcesDirectory in generatedSourcesDirectories) {
-          source.sourceDirectorySet
-              .srcDir(generatedSourcesDirectory.toRelativeString(project.projectDir))
-        }
-      }
+//      if (common == null) {
+//        for (generatedSourcesDirectory in generatedSourcesDirectories) {
+//          source.sourceDirectorySet
+//              .srcDir(generatedSourcesDirectory.toRelativeString(project.projectDir))
+//        }
+//      }
 
       val taskName = "generate${source.name.capitalize()}Protos"
       val task = project.tasks.register(taskName, WireTask::class.java) { task: WireTask ->
