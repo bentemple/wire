@@ -14,7 +14,7 @@ kotlin {
   jvm()
   def kmpJsEnabled = Boolean.parseBoolean(System.getProperty('kjs', 'true'))
   if (kmpJsEnabled) {
-    js {
+    js(BOTH) {
       nodejs()
     }
   }
